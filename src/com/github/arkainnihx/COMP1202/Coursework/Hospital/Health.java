@@ -1,6 +1,8 @@
 package com.github.arkainnihx.COMP1202.Coursework.Hospital;
 
 public class Health {
-	int healthState = 0;
+	HealthState healthState;
+	int recoveryTime = 0;
+	Illness illness;
 	
 }
