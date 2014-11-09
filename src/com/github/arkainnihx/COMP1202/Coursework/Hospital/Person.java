@@ -5,6 +5,12 @@ public abstract class Person {
 	private int age = 0;
 	private String health = "healthy";
 	
+	public Person(char gender, int age, String health) {
+		this.gender = (Character.toLowerCase(gender) == 'm' ? true : false);
+		this.age = age;
+		this.health = health;
+	}
+	
 	public char getGender() {
 		return (gender ? 'm' : 'f');
 	}
