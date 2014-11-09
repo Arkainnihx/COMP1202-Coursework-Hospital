@@ -14,6 +14,7 @@ public class Hospital {
 		testHospital.admitPatient(new Patient('f', 23, "healthy"));
 		if (testHospital.isTheatreFree(0))
 			testHospital.prepForTheatre(0, testHospital.getPatient(0));
+		testHospital.takeForRecovery(0);
 		
 		
 	}
