@@ -2,6 +2,8 @@ package com.github.arkainnihx.COMP1202.Coursework.Hospital;
 
 import java.util.ArrayList;
 
+import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Patient;
+
 public class Hospital {
 	private ArrayList<PatientContainer> bedList = new ArrayList<PatientContainer>();
 	private ArrayList<PatientContainer> theatreList = new ArrayList<PatientContainer>();

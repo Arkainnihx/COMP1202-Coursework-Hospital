@@ -1,4 +1,4 @@
-package com.github.arkainnihx.COMP1202.Coursework.Hospital;
+package com.github.arkainnihx.COMP1202.Coursework.Hospital.Health;
 
 public class Health {
 	private HealthState healthState;

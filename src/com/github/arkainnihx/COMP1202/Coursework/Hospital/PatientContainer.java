@@ -1,5 +1,7 @@
 package com.github.arkainnihx.COMP1202.Coursework.Hospital;
 
+import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Patient;
+
 public class PatientContainer {
 	private Patient patient = null;
 	private boolean isOccupied = false;
