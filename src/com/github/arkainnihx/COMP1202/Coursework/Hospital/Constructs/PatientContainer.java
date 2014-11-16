@@ -1,4 +1,4 @@
-package com.github.arkainnihx.COMP1202.Coursework.Hospital;
+package com.github.arkainnihx.COMP1202.Coursework.Hospital.Constructs;
 
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Patient;
 

@@ -1,11 +1,13 @@
 package com.github.arkainnihx.COMP1202.Coursework.Hospital.People;
 
+import com.github.arkainnihx.COMP1202.Coursework.Hospital.Health.Health;
+
 public abstract class Person {
 	private boolean gender = true;
 	private int age = 0;
-	private String health = "healthy";
+	private Health health;
 	
-	public Person(char gender, int age, String health) {
+	public Person(char gender, int age, Health health) {
 		this.gender = (Character.toLowerCase(gender) == 'm' ? true : false);
 		this.age = age;
 		this.health = health;
@@ -23,7 +25,7 @@ public abstract class Person {
 		this.age = age;
 	}
 
-	public String getHealth() {
+	public Health getHealth() {
 		return health;
 	}
 	

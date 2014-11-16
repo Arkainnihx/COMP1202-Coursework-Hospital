@@ -1,4 +1,4 @@
-package com.github.arkainnihx.COMP1202.Coursework.Hospital;
+package com.github.arkainnihx.COMP1202.Coursework.Hospital.Constructs;
 
 import java.util.ArrayList;
 
@@ -9,15 +9,6 @@ public class Hospital {
 	private ArrayList<PatientContainer> theatreList = new ArrayList<PatientContainer>();
 	
 	public static void main(String[] args) {
-		Hospital testHospital = new Hospital();
-		testHospital.admitPatient(new Patient('m', 19, "healthy"));
-		testHospital.admitPatient(new Patient('f', 45, "healthy"));
-		testHospital.admitPatient(new Patient('m', 10, "healthy"));
-		testHospital.admitPatient(new Patient('f', 23, "healthy"));
-		if (testHospital.isTheatreFree(0))
-			testHospital.prepForTheatre(0, testHospital.getPatient(0));
-		testHospital.takeForRecovery(0);
-		
 		
 	}
 	
