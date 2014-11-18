@@ -49,5 +49,14 @@ public enum Illness {
 	public boolean isRequiresTheatre() {
 		return requiresTheatre;
 	}
+	
+	public static Illness idToIllness(int illnessID) {
+		for (int illnessCount = 1; illnessCount < 9; illnessCount++) {
+			if (Illness.values()[illnessCount].getIdNum() == illnessID) {
+				return Illness.values()[illnessCount];
+			}
+		}
+		return null;
+	}
 
 }

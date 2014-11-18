@@ -30,16 +30,13 @@ public class Doctor extends Person {
 	
 	public boolean treatPatient() {
 		if (assignedPatient.getHealth().getIllness().getTreatedBy().equals(this.getClass())) {
-			patientRecovery();
+			assignedPatient.getHealth().setHealthState(HealthState.RECOVERING);
+			assignedPatient.getHealth().setRecoveryTime(assignedPatient.getHealth().generateRecoveryTime());
+			assignedPatient = null;
 			return true;
 		} else {
 			return false;
 		}
-	}
-	
-	public void patientRecovery() {
-		assignedPatient.getHealth().setHealthState(HealthState.RECOVERING);
-		assignedPatient.getHealth().setRecoveryTime(assignedPatient.getHealth().generateRecoveryTime());
 	}
 	
 	public boolean aDayPasses() {

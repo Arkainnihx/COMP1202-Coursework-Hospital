@@ -14,9 +14,13 @@ public class Health {
 	}
 	
 	public Health(Illness illness) {
-		this(HealthState.ILL, illness, 0);
+		this(HealthState.ILL, illness, -1);
 	}
 	
+	public Health(int illnessID) {
+		this(HealthState.ILL, Illness.idToIllness(illnessID), -1);
+	}
+		
 	public Health() {
 		this(HealthState.HEALTHY, null, 0);
 	}

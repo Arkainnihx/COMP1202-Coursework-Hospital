@@ -1,4 +1,4 @@
-package com.github.arkainnihx.COMP1202.Coursework.Hospital.Constructs;
+package com.github.arkainnihx.COMP1202.Coursework.Hospital.Admin;
 
 import java.util.ArrayList;
 
@@ -7,16 +7,12 @@ import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Patient;
 public class Hospital {
 	private ArrayList<PatientContainer> bedList = new ArrayList<PatientContainer>();
 	private ArrayList<PatientContainer> theatreList = new ArrayList<PatientContainer>();
-	
-	public static void main(String[] args) {
-		
-	}
-	
-	public Hospital() {
-		for (int bedCount = 0; bedCount < 50; bedCount++) {
+
+	public Hospital(int bedNum, int theatreNum) {
+		for (int bedCount = 0; bedCount < bedNum; bedCount++) {
 			bedList.add(new PatientContainer());
 		}
-		for (int bedCount = 0; bedCount < 4; bedCount++) {
+		for (int theatreCount = 0; theatreCount < theatreNum; theatreCount++) {
 			theatreList.add(new PatientContainer());
 		}
 	}
@@ -58,6 +54,10 @@ public class Hospital {
 		theatreList.get(theatreIndex).discharge();
 	}
 	
+	public ArrayList<PatientContainer> getBedList() {
+		return bedList;
+	}
+
 	// TODO: Stub class.
 	public void aDayPasses() {
 		 

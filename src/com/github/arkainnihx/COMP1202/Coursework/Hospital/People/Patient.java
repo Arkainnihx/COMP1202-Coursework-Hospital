@@ -8,7 +8,6 @@ public class Patient extends Person {
 		super(gender, age, health);
 	}
 	
-	// TODO: Stub class.
 	@Override
 	public boolean aDayPasses() {
 		
