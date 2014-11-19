@@ -3,9 +3,9 @@ package com.github.arkainnihx.COMP1202.Coursework.Hospital.People;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.Health.Health;
 
 public abstract class Person {
-	private boolean gender = true;
-	private int age = 0;
-	private Health health;
+	protected boolean gender = true;
+	protected int age = 0;
+	protected Health health;
 	
 	public Person(char gender, int age, Health health) {
 		this.gender = (Character.toLowerCase(gender) == 'm' ? true : false);

@@ -1,5 +1,7 @@
 package com.github.arkainnihx.COMP1202.Coursework.Hospital.Health;
 
+import java.util.Random;
+
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Doctor;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.LimbSurgeon;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.OrganSurgeon;
@@ -46,17 +48,32 @@ public enum Illness {
 		return treatedBy;
 	}
 
-	public boolean isRequiresTheatre() {
+	public boolean requiresTheatre() {
 		return requiresTheatre;
 	}
 	
+	public boolean isTreatable(Class<? extends Doctor> doctor) {
+		return (this.treatedBy.equals(doctor));
+	}
+	
 	public static Illness idToIllness(int illnessID) {
-		for (int illnessCount = 1; illnessCount < 9; illnessCount++) {
+		for (int illnessCount = 1; illnessCount < Illness.values().length; illnessCount++) {
 			if (Illness.values()[illnessCount].getIdNum() == illnessID) {
 				return Illness.values()[illnessCount];
 			}
 		}
 		return null;
+	}
+	
+	public int generateRecoveryTime() {
+		Random rnd = new Random();
+		int min = this.getRecoveryMin();
+		int max = this.getRecoveryMax();
+		if (min == max) {
+			return min;
+		} else {
+			return min + rnd.nextInt(max - min + 1);
+		}
 	}
 
 }

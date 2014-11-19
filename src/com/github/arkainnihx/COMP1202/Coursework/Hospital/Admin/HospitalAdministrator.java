@@ -13,8 +13,6 @@ public class HospitalAdministrator {
 	ArrayList<Patient> excessPatients = new ArrayList<Patient>();
 	int patientsDischarged = 0;
 	int patientsTurnedAway = 0;
-	boolean vacancy = true;
-	
 	public static void main(String[] args) {
 
 	}
@@ -24,15 +22,22 @@ public class HospitalAdministrator {
 		if (excessPatients.size() > 0)
 			newPatients.addAll(excessPatients);
 		newPatients.addAll(generateNewPatients());
-		// TODO: This is not finished and will not work yet. Fix while loop.
-		while (vacancy) {
-			for (PatientContainer bed : workingHospital.getBedList()) {
-				if (bed.occupy(newPatients.get(0))) {
-					newPatients.remove(0);
-					if (excessPatients.size() > 0)
-						excessPatients.remove(0);
+		if (workingHospital.hasVacancy()) {
+				while (newPatients.size() > 0) {
+					if (workingHospital.admitPatient(newPatients.get(0)) != -1) {
+						newPatients.remove(0);
+						if (excessPatients.size() > 0)
+							excessPatients.remove(0);
+					} else 
+						break;
 				}
+		}
+		if (newPatients.size() > 0) {
+			if (excessPatients.size() > 0) {
+				for (int patientCount = 0; patientCount < excessPatients.size(); patientCount++) 
+					newPatients.remove(0);
 			}
+			excessPatients.addAll(newPatients);
 		}
 		
 		return true;
@@ -46,6 +51,10 @@ public class HospitalAdministrator {
 			newPatientList.add(new Patient((gen.nextBoolean() ? 'm' : 'f'), gen.nextInt(100) + 1, new Health(gen.nextInt(8) + 1)));
 		}
 		return newPatientList;
+	}
+	
+	public void dailyReport() {
+		
 	}
 
 }

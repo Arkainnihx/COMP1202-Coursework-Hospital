@@ -1,7 +1,6 @@
 package com.github.arkainnihx.COMP1202.Coursework.Hospital.People;
 
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.Health.Health;
-import com.github.arkainnihx.COMP1202.Coursework.Hospital.Health.HealthState;
 
 public class Doctor extends Person {
 	private int specialism = 0;
@@ -29,9 +28,7 @@ public class Doctor extends Person {
 	}
 	
 	public boolean treatPatient() {
-		if (assignedPatient.getHealth().getIllness().getTreatedBy().equals(this.getClass())) {
-			assignedPatient.getHealth().setHealthState(HealthState.RECOVERING);
-			assignedPatient.getHealth().setRecoveryTime(assignedPatient.getHealth().generateRecoveryTime());
+		if (assignedPatient.beTreated(this.getClass())) {
 			assignedPatient = null;
 			return true;
 		} else {

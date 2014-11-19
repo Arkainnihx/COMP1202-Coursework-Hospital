@@ -1,7 +1,5 @@
 package com.github.arkainnihx.COMP1202.Coursework.Hospital.Health;
 
-import java.util.Random;
-
 public class Health {
 	private HealthState healthState;
 	private Illness illness;
@@ -49,15 +47,8 @@ public class Health {
 		this.recoveryTime = recoveryTime;
 	}
 	
-	public int generateRecoveryTime() {
-		Random rnd = new Random();
-		int min = this.illness.getRecoveryMin();
-		int max = this.illness.getRecoveryMax();
-		if (min == max) {
-			return min;
-		} else {
-			return min + rnd.nextInt(max - min + 1);
-		}
+	public void setRecoveryTime() {
+		this.recoveryTime = illness.generateRecoveryTime();
 	}
 	
 }
