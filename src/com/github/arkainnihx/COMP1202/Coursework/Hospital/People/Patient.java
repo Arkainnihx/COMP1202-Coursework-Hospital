@@ -9,8 +9,8 @@ public class Patient extends Person {
 		super(gender, age, health);
 	}
 	
-	public boolean beTreated(Class<? extends Doctor> doctor) {
-		if (health.getIllness().isTreatable(doctor)) {
+	public boolean beTreated(int[] idArray) {
+		if (health.getIllness().isTreatableBy(idArray)) {
 			health.setHealthState(HealthState.RECOVERING);
 			health.setRecoveryTime();
 			return true;

@@ -8,4 +8,9 @@ public class LimbSurgeon extends Surgeon {
 		super(gender, age, health);
 	}
 	
+	protected boolean operate() {
+		int[] idArray = {4, 7, 8};
+		return internalTreat(idArray);
+	}
+	
 }

@@ -159,7 +159,7 @@ public class Hospital {
 		return dailyPatientsTurnedAway;
 	}
 
-	// TODO: Stub class.
+	// TODO: Stub method.
 	/**
 	 * Simulates a single day for the hospital.
 	 */

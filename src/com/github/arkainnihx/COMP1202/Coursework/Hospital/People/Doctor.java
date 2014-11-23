@@ -28,7 +28,12 @@ public class Doctor extends Person {
 	}
 	
 	public boolean treatPatient() {
-		if (assignedPatient.beTreated(this.getClass())) {
+		int[] idArray = {1, 2, 3};
+		return internalTreat(idArray);
+	}
+	
+	protected boolean internalTreat(int[] idArray) {
+		if (assignedPatient.beTreated(idArray)) {
 			assignedPatient = null;
 			return true;
 		} else {
