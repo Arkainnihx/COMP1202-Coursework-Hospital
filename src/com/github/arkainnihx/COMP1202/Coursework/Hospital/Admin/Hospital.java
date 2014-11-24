@@ -8,9 +8,6 @@ public class Hospital {
 	private ArrayList<PatientContainer> bedList = new ArrayList<PatientContainer>();
 	private ArrayList<PatientContainer> theatreList = new ArrayList<PatientContainer>();
 	private boolean hasVacancy = true;
-	private int dailyPatientsAdmitted = 0;
-	private int dailyPatientsDischarged = 0;
-	private int dailyPatientsTurnedAway = 0;
 	
 	/**
 	 * Constructs a new Hospital with the specified number of beds and theatres.
@@ -27,6 +24,14 @@ public class Hospital {
 		}
 	}
 	
+	// TODO: Stub method.
+	/**
+	 * Simulates a single day for the hospital.
+	 */
+	public void aDayPasses() {
+
+	}
+	
 	/**
 	 * Checks for an available bed and admits the specified patient to that bed.
 	 * 
@@ -38,12 +43,20 @@ public class Hospital {
 	public int admitPatient(Patient patient) {
 		for(int bedCount = 0; bedCount < bedList.size(); bedCount++) {
 			if (bedList.get(bedCount).occupy(patient)) {
-				dailyPatientsAdmitted++;
 				return bedCount;
 			}
 		}
 		hasVacancy = false;
 		return -1;
+	}
+	
+	/**
+	 * Discharges a the patient in the bed of the specified bedIndex.
+	 * 
+	 * @param bedIndex the specified index of the bed in the bedList.
+	 */
+	public boolean dischargePatient(int bedIndex) {
+		return bedList.get(bedIndex).discharge();
 	}
 	
 	/**
@@ -73,17 +86,7 @@ public class Hospital {
 		}
 		return occupyCount;
 	}
-	
-	/**
-	 * Discharges a the patient in the bed of the specified bedIndex.
-	 * 
-	 * @param bedIndex the specified index of the bed in the bedList.
-	 */
-	public void dischargePatient(int bedIndex) {
-		if (bedList.get(bedIndex).discharge())
-			dailyPatientsDischarged++;
-	}
-	
+		
 	/**
 	 * Checks if the theatre with the specified index is free.
 	 * 
@@ -138,35 +141,4 @@ public class Hospital {
 		this.hasVacancy = hasVacancy;
 	}
 
-	/**
-	 * Returns the number of patients admitted to the hospital during that day.
-	 */
-	public int getDailyPatientsAdmitted() {
-		return dailyPatientsAdmitted;
-	}
-	
-	/**
-	 * Returns the number of patients discharged from the hospital during that day.
-	 */
-	public int getDailyPatientsDischarged() {
-		return dailyPatientsDischarged;
-	}
-
-	/**
-	 * Returns the number of patients turned away from the hospital during that day.
-	 */
-	public int getDailyPatientsTurnedAway() {
-		return dailyPatientsTurnedAway;
-	}
-
-	// TODO: Stub method.
-	/**
-	 * Simulates a single day for the hospital.
-	 */
-	public void aDayPasses() {
-		dailyPatientsAdmitted = 0;
-		dailyPatientsDischarged = 0;
-		dailyPatientsTurnedAway = 0;
-	}
-	
 }

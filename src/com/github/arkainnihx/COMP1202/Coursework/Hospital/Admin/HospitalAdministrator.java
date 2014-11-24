@@ -8,16 +8,29 @@ import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Doctor;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Patient;
 
 public class HospitalAdministrator {
-	Hospital workingHospital;
-	ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
-	ArrayList<Patient> excessPatients = new ArrayList<Patient>();
-	int patientsDischarged = 0;
-	int patientsTurnedAway = 0;
-	public static void main(String[] args) {
+	private Hospital workingHospital;
+	private ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
+	private ArrayList<Patient> excessPatients = new ArrayList<Patient>();
+	private int patientsDischarged, patientsTurnedAway, dailyPatientsAdmitted,
+			dailyPatientsDischarged, dailyPatientsTurnedAway = 0;
 
+	public static void main(String[] args) {
+		
 	}
 	
 	public boolean aDayPasses() {
+		dailyPatientsAdmitted = 0;
+		dailyPatientsDischarged = 0;
+		dailyPatientsTurnedAway = 0;
+		admitNewPatients();
+		
+		
+		
+		System.out.println(getDailyReport());
+		return true;
+	}
+	
+	public void admitNewPatients() {
 		ArrayList<Patient> newPatients = new ArrayList<Patient>();
 		if (excessPatients.size() > 0)
 			newPatients.addAll(excessPatients);
@@ -25,6 +38,7 @@ public class HospitalAdministrator {
 		if (workingHospital.hasVacancy()) {
 				while (newPatients.size() > 0) {
 					if (workingHospital.admitPatient(newPatients.get(0)) != -1) {
+						dailyPatientsAdmitted++;
 						newPatients.remove(0);
 						if (excessPatients.size() > 0)
 							excessPatients.remove(0);
@@ -38,9 +52,8 @@ public class HospitalAdministrator {
 					newPatients.remove(0);
 			}
 			excessPatients.addAll(newPatients);
+			dailyPatientsTurnedAway = excessPatients.size();
 		}
-		
-		return true;
 	}
 	
 	public ArrayList<Patient> generateNewPatients() {
@@ -53,8 +66,9 @@ public class HospitalAdministrator {
 		return newPatientList;
 	}
 	
-	public void dailyReport() {
+	public String getDailyReport() {
 		
+		return "";
 	}
 
 }

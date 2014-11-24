@@ -3,7 +3,7 @@ package com.github.arkainnihx.COMP1202.Coursework.Hospital.People;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.Health.Health;
 
 public class Doctor extends Person {
-	private int specialism = 0;
+	protected int specialism = 0;
 	protected Patient assignedPatient;
 
 	public Doctor(char gender, int age, Health health) {
