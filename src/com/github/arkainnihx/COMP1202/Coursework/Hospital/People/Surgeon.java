@@ -7,20 +7,21 @@ public class Surgeon extends Doctor {
 	public Surgeon(char gender, int age, Health health) {
 		super(gender, age, health);
 	}
-	
+
+	@Override
 	public boolean treatPatient() {
-		if (operate()) {
+		if (operate())
 			return true;
-		} else if (super.treatPatient()) {
+		else if (super.treatPatient())
 			return true;
-		} else {
+		else
 			return false;
-		}
 	}
-	
+
 	protected boolean operate() {
-		int[] idArray = {4};
-		return internalTreat(idArray);
+		if (assignedPatient.isInTheatre())
+			return internalTreat();
+		else
+			return false;
 	}
-	
 }
