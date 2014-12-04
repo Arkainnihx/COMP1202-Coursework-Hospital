@@ -6,6 +6,7 @@ import java.util.Random;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.Health.Health;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Doctor;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Patient;
+import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Surgeon;
 
 public class HospitalAdministrator {
 	private Hospital workingHospital;
@@ -77,9 +78,12 @@ public class HospitalAdministrator {
 	
 	private void prepPatientsForTheatre() {
 		for (Doctor doctor : doctorList) {
-			if (doctor.isAssignedPatient()) {
-				if (doctor.getAssignedPatient().requiresTheatre()) {
-					//TODO: Start from here.
+			if (doctor.isAssignedPatient() && doctor.getAssignedPatient().requiresTheatre()) {
+				for (int theatreCount = 0; theatreCount < workingHospital.getTheatreList().size(); theatreCount++) {
+					if (workingHospital.prepForTheatre(theatreCount, doctor.getAssignedPatient())) {
+						((Surgeon) doctor).setTheatreIndex(theatreCount);
+						break;
+					}
 				}
 			}
 		}

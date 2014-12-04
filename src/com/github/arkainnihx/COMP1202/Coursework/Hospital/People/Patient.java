@@ -19,7 +19,7 @@ public class Patient extends Person {
 	}
 
 	public boolean beTreated(Doctor doctor) {
-		if (health.getIllness().isTreatableBy(doctor)) {
+		if (isTreatableBy(doctor)) {
 			health.setHealthState(HealthState.RECOVERING);
 			health.setRecoveryTime();
 			return true;

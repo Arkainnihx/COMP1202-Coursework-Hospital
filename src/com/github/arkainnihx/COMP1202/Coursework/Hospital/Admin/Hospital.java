@@ -103,8 +103,13 @@ public class Hospital {
 	 * @param theatreIndex the specified index of the theatre.
 	 * @param patient the specified patient.
 	 */
-	public void prepForTheatre(int theatreIndex, Patient patient) {
-		theatreList.get(theatreIndex).occupy(patient);
+	public boolean prepForTheatre(int theatreIndex, Patient patient) {
+		if (theatreList.get(theatreIndex).occupy(patient)) {
+			patient.setInTheatre(true);
+			return true;
+		} else {
+			return false;
+		}
 	}
 	
 	/**
@@ -123,6 +128,13 @@ public class Hospital {
 		return bedList;
 	}
 	
+	/**
+	 * Returns the theatreList.
+	 */
+	public ArrayList<PatientContainer> getTheatreList() {
+		return theatreList;
+	}
+
 	/**
 	 * Checks if there are any free beds in the bedList.
 	 * 
