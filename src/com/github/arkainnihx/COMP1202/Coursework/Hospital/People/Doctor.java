@@ -67,8 +67,7 @@ public class Doctor extends Person {
 
 	@Override
 	public boolean aDayPasses() {
-		// TODO Auto-generated method stubs
-		return false;
+		return treatPatient();
 	}
 
 }

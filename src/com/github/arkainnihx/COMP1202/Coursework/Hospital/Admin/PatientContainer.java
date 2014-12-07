@@ -10,6 +10,7 @@ public class PatientContainer {
 		if (!isOccupied) {
 			isOccupied = true;
 			this.patient = patient;
+			patient.setMyBed(this);
 			return true;
 		} else
 			return false;

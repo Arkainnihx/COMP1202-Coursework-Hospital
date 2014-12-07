@@ -24,12 +24,20 @@ public class Hospital {
 		}
 	}
 	
-	// TODO: Stub method.
 	/**
 	 * Simulates a single day for the hospital.
 	 */
-	public void aDayPasses() {
-
+	public int aDayPasses() {
+		int dischargeCount = 0;
+		for (int theatreCount = 0; theatreCount < theatreList.size(); theatreCount++) {
+			takeForRecovery(theatreCount);
+		}
+		for (PatientContainer bed : bedList) {
+			if (bed.getPatient().aDayPasses()) {
+				dischargeCount++;
+			}
+		}
+		return dischargeCount;
 	}
 	
 	/**

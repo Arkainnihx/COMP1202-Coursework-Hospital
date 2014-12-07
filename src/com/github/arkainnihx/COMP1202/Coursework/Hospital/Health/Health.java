@@ -51,4 +51,14 @@ public class Health {
 		this.recoveryTime = illness.generateRecoveryTime();
 	}
 	
+	public boolean decRecoveryTime() {
+		recoveryTime--;
+		if (recoveryTime == 0) {
+			healthState = HealthState.HEALTHY;
+			illness = null;
+			return true;
+		}
+		return false;
+	}
+	
 }
