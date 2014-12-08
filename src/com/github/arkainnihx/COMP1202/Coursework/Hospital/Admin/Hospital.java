@@ -59,6 +59,17 @@ public class Hospital {
 	}
 	
 	/**
+	 * Admits the specified patient to the bed with the specified index. Used for loading from a config file.
+	 * 
+	 * @param patient The specified patient.
+	 * @param bedIndex The index of the specified bed.
+	 * @return true if admitting went successfully.
+	 */
+	public boolean admitPatient(Patient patient, int bedIndex) {
+		return bedList.get(bedIndex).occupy(patient);
+	}
+			
+	/**
 	 * Discharges a the patient in the bed of the specified bedIndex.
 	 * 
 	 * @param bedIndex the specified index of the bed in the bedList.

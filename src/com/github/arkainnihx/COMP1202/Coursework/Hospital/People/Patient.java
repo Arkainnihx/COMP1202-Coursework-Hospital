@@ -43,7 +43,7 @@ public class Patient extends Person {
 
 	@Override
 	public boolean aDayPasses() {
-		if (health.getRecoveryTime() > 0 && health.decRecoveryTime()) {
+		if (health.getRecoveryTime() >= 0 && health.decRecoveryTime()) {
 			myBed.discharge();
 			myBed = null;
 			return true;

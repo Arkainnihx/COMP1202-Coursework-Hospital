@@ -6,7 +6,6 @@ import java.util.Random;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.Health.Health;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Doctor;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Patient;
-import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Surgeon;
 
 public class HospitalAdministrator {
 	private Hospital workingHospital;

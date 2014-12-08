@@ -5,8 +5,15 @@ import java.util.Random;
 import com.github.arkainnihx.COMP1202.Coursework.Hospital.People.Doctor;
 
 public enum Illness {
-	Dijkstras_Syndrome(1, 5, 5, false), Java_Flu(2, 3, 3, false), Deadline_Panic_Attacks(3, 1, 1, false), Polymorphic_Cist(4, 2, 4, true), Semicolon_Missing(5, 5, 8, true), Trapped_Exception(6, 6, 8, true), Tim_Berners_Knee(7, 4, 6, true), Coders_Elbow(8, 2, 3, true);
-
+	Dijkstras_Syndrome(1, 5, 5, false),
+	Java_Flu(2, 3, 3, false),
+	Deadline_Panic_Attacks(3, 1, 1, false),
+	Polymorphic_Cist(4, 2, 4, true),
+	Semicolon_Missing(5, 5, 8, true),
+	Trapped_Exception(6, 6, 8, true),
+	Tim_Berners_Knee(7, 4, 6, true),
+	Coders_Elbow(8, 2, 3, true);
+	
 	private int idNum;
 	private int recoveryMin;
 	private int recoveryMax;
