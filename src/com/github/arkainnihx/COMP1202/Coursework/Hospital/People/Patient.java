@@ -27,10 +27,15 @@ public class Patient extends Person {
 	public boolean beTreated(Doctor doctor) {
 		if (isTreatableBy(doctor)) {
 			health.setHealthState(HealthState.RECOVERING);
+			health.setIllness(null);
 			health.setRecoveryTime();
 			return true;
 		} else
 			return false;
+	}
+	
+	public boolean requiresTreatment() {
+		return (health.getHealthState().equals(HealthState.ILL));
 	}
 
 	public boolean requiresTheatre() {

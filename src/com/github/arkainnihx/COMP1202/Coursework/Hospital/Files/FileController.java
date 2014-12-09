@@ -1,4 +1,4 @@
-package com.github.arkainnihx.COMP1202.Coursework.Hospital.Admin;
+package com.github.arkainnihx.COMP1202.Coursework.Hospital.Files;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
